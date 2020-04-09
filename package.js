@@ -1,8 +1,8 @@
 Package.describe({
-    name: 'symptomatic:covid19-geomapping',
+    name: 'symptomatic:covid19-reporting',
     version: '0.4.0',
-    summary: 'COVID19 Hackathon',
-    git: 'https://github.com/symptomatic/covid19-geomapping',
+    summary: 'Covid19 - Reporting - SANER (Situational Awareness of Novel Epidemic Response',
+    git: 'https://github.com/symptomatic/covid19-reporting',
     documentation: 'README.md'
 });
   
@@ -20,17 +20,7 @@ Package.onUse(function(api) {
     api.use('random');
     api.use('fourseven:scss');
 
-    api.use('browser-policy@1.1.0')
-
     api.use('clinical:hl7-fhir-data-infrastructure@6.3.2');
-
-    api.addFiles('stylesheets/maps.css', 'client');
-    
-    api.addFiles('server/BrowserPolicies.js', 'server');
-    api.addFiles('server/Geocoding.js', 'server');
-
-    api.addFiles('geodata/illinois-epa-toxic-inventory-sites.geojson', 'client', {isAsset: true});
-    api.addFiles('geodata/covid19-patients-synthea.geojson', 'client', {isAsset: true});
     
     api.mainModule('index.jsx', 'client');
 });
