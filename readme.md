@@ -1,4 +1,4 @@
-# COVID19 on FHIR - Reporting - SANER (Situational Awareness for Novel Epidemic Response)  
+# COVID19 on FHIR - Reporting (SANER)  
 
 
 #### Prerequisites  
