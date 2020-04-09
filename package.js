@@ -25,7 +25,3 @@ Package.onUse(function(api) {
     api.mainModule('index.jsx', 'client');
 });
 
-Npm.depends({
-    "google-map-react":"1.1.7",
-    "node-geocoder": "3.26.0"
-});

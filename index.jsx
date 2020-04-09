@@ -6,8 +6,6 @@ import {
   ReportingButtons
 } from './client/FooterButtons';
 
-import { HeaderNavigation } from './client/HeaderNavigation';
-
 var DynamicRoutes = [{
   'name': 'ReportingPage',
   'path': '/reporting',
@@ -26,7 +24,6 @@ export {
   DynamicRoutes, 
 
   ReportingPage,
-  
-  HeaderNavigation,
+
   FooterButtons
 };

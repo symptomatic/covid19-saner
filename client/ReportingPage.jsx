@@ -36,8 +36,6 @@ import { Patients, Organizations, Measures, Devices, MeasureReports, MeasuresTab
 import { PageCanvas, StyledCard, PatientTable } from 'material-fhir-ui';
 import { useTracker } from './Tracker';
 
-import FhirUtilities from '../lib/FhirUtilities';
-
 
 import Client from 'fhir-kit-client';
 
@@ -424,10 +422,6 @@ function ReportingPage(props){
                   locations={hospitalLocations}
                   rowsPerPage={10}
                   count={hospitalLocationsCount}
-                  hideCheckboxes={true}
-                  hideActionIcons={true}
-                  hideIdentifier={true}
-                  hideName={false}
                 />
               </CardContent>
               <CardActions style={{display: 'inline-flex', width: '100%'}} >
