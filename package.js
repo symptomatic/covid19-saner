@@ -20,7 +20,7 @@ Package.onUse(function(api) {
     api.use('random');
     api.use('fourseven:scss');
 
-    api.use('clinical:hl7-fhir-data-infrastructure@6.4.4');
+    api.use('clinical:hl7-fhir-data-infrastructure@6.4.5');
     
     api.mainModule('index.jsx', 'client');
 });

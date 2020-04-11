@@ -421,7 +421,13 @@ function ReportingPage(props){
                 <LocationsTable 
                   locations={hospitalLocations}
                   rowsPerPage={10}
+                  hideAddress={true}
+                  hideIdentifier={true}
                   count={hospitalLocationsCount}
+                  hideLatitude={false}
+                  hideLongitude={false}
+                  hideCountry={true}
+                  hideAddress={true}
                 />
               </CardContent>
               <CardActions style={{display: 'inline-flex', width: '100%'}} >
