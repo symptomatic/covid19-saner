@@ -11,9 +11,6 @@ import JSON5 from 'json5';
 
 import ReportingMethods from '../lib/ReportingMethods';
 
-let apiKey = get(Meteor, 'settings.public.interfaces.default.auth.username', '');
-let usePseudoCodes = get(Meteor, 'settings.public.usePseudoCodes', false);
-let fhirBaseUrl = get(Meteor, 'settings.public.interfaces.default.channel.endpoint', false);
 
 
 // =========================================================================================

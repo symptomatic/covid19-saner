@@ -53,9 +53,11 @@ function DynamicSpacer(props){
 }
 
 let fhirClient = new Client({
-  baseUrl: get(Meteor, 'settings.public.interfaces.default.channel.endpoint', 'http://localhost:3100/baseR4')
+  // baseUrl: get(Meteor, 'settings.public.interfaces.default.channel.endpoint', 'http://localhost:3100/baseR4')
+  baseUrl: get(Meteor, 'settings.public.smartOnFhir[0].fhirServiceUrl', 'http://localhost:3100/baseR4')
 });
-console.log('Intitializing fhir-kit-client for ' + get(Meteor, 'settings.public.interfaces.default.channel.endpoint', 'http://localhost:3100/baseR4'))
+// console.log('Intitializing fhir-kit-client for ' + get(Meteor, 'settings.public.interfaces.default.channel.endpoint', 'http://localhost:3100/baseR4'))
+console.log('Intitializing fhir-kit-client for ' + get(Meteor, 'settings.public.smartOnFhir[0].fhirServiceUrl', 'http://localhost:3100/baseR4'))
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -98,7 +100,7 @@ function ReportingPage(props){
   
 
   let [checkedTested,  setCheckedTested]  = useState(false);
-  let [fhirServerEndpoint, setFhirServerEndpoint] = useState(get(Meteor, 'settings.public.interfaces.default.channel.endpoint', 'http://localhost:3100/baseR4'));
+  let [fhirServerEndpoint, setFhirServerEndpoint] = useState( get(Meteor, 'settings.public.smartOnFhir[0].fhirServiceUrl', 'http://localhost:3100/baseR4'));
 
   //-------------------------------------------------------------------
   // Tracking
@@ -340,7 +342,7 @@ function ReportingPage(props){
             <CardHeader 
                 title="Step 7 - Receive Measures & Reports" 
                 style={{fontSize: '100%'}} />  
-            <StyledCard id="fetchedPatientsCard" style={{minHeight: '240px'}}>
+            <StyledCard id="fetchedPatientsCard">
               <CardHeader 
                 id="measureCardCount"
                 title={measureTitle}  
@@ -360,7 +362,7 @@ function ReportingPage(props){
               </CardContent>
             </StyledCard>          
             <DynamicSpacer />
-            <StyledCard id="fetchedPatientsCard" style={{minHeight: '240px'}}>
+            <StyledCard id="fetchedPatientsCard">
               <CardHeader 
                 id="measureReportsCardCount"
                 title={measureReportsTitle}  
