@@ -66,14 +66,23 @@ import {
 
 
   const useTabStyles = makeStyles(theme => ({
-    button: {
+    west_button: {
       cursor: 'pointer',
       justifyContent: 'left',
-      color: theme.appBarTextColor,
+      color: theme.palette.appBar.contrastText,
       marginLeft: '20px',
       marginTop: '10px'
+    },
+    east_button: {
+      cursor: 'pointer',
+      justifyContent: 'left',
+      color: theme.palette.appBar.contrastText,
+      right: '20px',
+      marginTop: '15px',
+      position: 'absolute'
     }
   }));
+
 
 //============================================================================================================================
 // FETCH
@@ -91,11 +100,11 @@ export function ReportingButtons(props){
 
     ReportingMethods.initializeSampleMeasure();
     ReportingMethods.initializeSampleMeasureReport();
-    LocationMethods.initializeHospitals();
+    // LocationMethods.initializeHospitals();
   }
   return (
     <MuiThemeProvider theme={muiTheme} >
-      <Button onClick={ initializeMeasures.bind() } className={ buttonClasses.button }>
+      <Button onClick={ initializeMeasures.bind() } className={ buttonClasses.west_button }>
         Initialize Measures
       </Button>      
     </MuiThemeProvider>

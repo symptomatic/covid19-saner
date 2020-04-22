@@ -337,7 +337,7 @@ function ReportingPage(props){
   return (
     <PageCanvas id='fetchDataFromHospitalPage' headerHeight={158} >
       <MuiPickersUtilsProvider utils={MomentUtils} libInstance={moment} local="en">
-        <Grid container spacing={3} >
+        <Grid container spacing={3} style={{marginBottom: '80px'}}>
           <Grid item xs={4}>
             <CardHeader 
                 title="Step 7 - Receive Measures & Reports" 
@@ -345,8 +345,7 @@ function ReportingPage(props){
             <StyledCard id="fetchedPatientsCard">
               <CardHeader 
                 id="measureCardCount"
-                title={measureTitle}  
-                
+                title={measureTitle}                  
                 style={{fontSize: '100%'}} />
               <CardContent style={{fontSize: '100%', paddingBottom: '28px'}}>
                 <MeasuresTable 
@@ -358,8 +357,12 @@ function ReportingPage(props){
                   hideIdentifier={true}
                   hideSubject={true}
                   hideStatus={true}
+                  count={measureCount}
                 />
               </CardContent>
+              <CardActions style={{display: 'inline-flex', width: '100%'}} >
+                <Button id="clearMeasuresBtn" color="primary" className={classes.button} onClick={clearMeasures.bind(this)} >Clear</Button> 
+              </CardActions> 
             </StyledCard>          
             <DynamicSpacer />
             <StyledCard id="fetchedPatientsCard">
@@ -378,10 +381,13 @@ function ReportingPage(props){
                   hidePeriodStart={true}
                   hidePeriodEnd={true}
                   measuresCursor={Measures}
+                  count={measureReportCount}
+                  measureShorthand={true}
                  />
               </CardContent>
               <CardActions style={{display: 'inline-flex', width: '100%'}} >
                 <Button id="lookupOrganization" color="primary" variant="contained" className={classes.button} onClick={lookupOrganizations.bind(this)} >Lookup Organizations</Button>                 
+                <Button id="clearMeasureReportsBtn" color="primary" className={classes.button} onClick={clearMeasureReports.bind(this)} >Clear</Button> 
               </CardActions> 
             </StyledCard>          
                   
