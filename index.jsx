@@ -6,13 +6,7 @@ import {
   ReportingButtons,
   OrganizationsButtons,
   MeasuresButtons,
-  MeasureReportsButtons,
-  TasksButtons,
-  ListsButtons,
-  QuestionnairesButtons,
-  QuestionnaireResponsesButtons,
-  ValueSetsButtons,
-  ExplanationOfBenefitsButtons
+  MeasureReportsButtons,  
 } from './client/FooterButtons';
 
 var DynamicRoutes = [{
@@ -34,24 +28,6 @@ let FooterButtons = [{
 }, {
   pathname: '/measure-reports',
   component: <MeasureReportsButtons />
-}, {
-  pathname: '/tasks',
-  component: <TasksButtons />
-}, {
-  pathname: '/lists',
-  component: <ListsButtons />
-}, {
-  pathname: '/questionnaires',
-  component: <QuestionnairesButtons />
-}, {
-  pathname: '/questionnaire-responses',
-  component: <QuestionnaireResponsesButtons />
-}, {
-  pathname: '/valuesets',
-  component: <ValueSetsButtons />
-}, {
-  pathname: '/explanation-of-benefits',
-  component: <ExplanationOfBenefitsButtons />
 }];
 
 
