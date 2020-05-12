@@ -1,0 +1,449 @@
+{
+  "resourceType": "Bundle",
+  "id": "FHIR-3",
+  "identifier": {
+    "system": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/",
+    "value": "FHIR-3"
+  },
+  "type": "collection",
+  "timestamp": "2020-04-10T12:19:25.2454129-05:00",
+  "entry": [
+    {
+      "fullUrl": "https://github.com/microsoft-healthcare-madison/learning-spike-erp/MeasureReport/sanerFEMA",
+      "resource": {
+        "resourceType": "Measure",
+        "id": "sanerFEMA",
+        "url": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig/sanerFEMA",
+        "version": "20200408.03",
+        "name": "sanerFEMA",
+        "title": "FEMA Measurement Group",
+        "status": "draft",
+        "identifier": [{
+          "system": "SANER Tracking Version",
+          "value": "saner-fema-v0.2.0"
+        }],
+        "author": [{
+          "name": "Michael Donnelly",
+          "telecom": [{
+            "system": "email",
+            "value": "michael.donnelly@epic.com"
+          }]
+        }, {
+          "name": "Gino Canessa",
+          "telecom": [{
+            "system": "email",
+            "value": "gino.canessa@microsoft.com"
+          }]
+        }],
+        "editor": [{
+          "name": "Abigail Watson",
+          "telecom": [{
+            "system": "email",
+            "value": "abigail@symptomatic.healthcare"
+          }]
+        }],
+        "reviewer": [{
+          "name": "Keith Boone",
+          "telecom": [{
+            "system": "email",
+            "value": "kwboone@gmail.com"
+          }]
+        }],
+        "endorser": [],
+        "scoring": {
+          "text": "Continuous Variable",
+          "coding": [{
+            "code": "continuous-variable",
+            "display": "Continuous Variable"
+          }]
+        },
+        "subjectCodeableConcept": {
+          "coding": [
+            {
+              "system": "Location",
+              "code": "Location"
+            }
+          ]
+        },
+        "date": "2020-04-08T00:00:00Z",
+        "publisher": "HL7 SANER-IG",
+        "description": "FEMA Measurement Group",
+        "useContext": [
+          {
+            "code": {
+              "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+              "code": "focus"
+            },
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "840539006",
+                  "display": "COVID-19"
+                }
+              ]
+            }
+          }
+        ],
+        "jurisdiction": [
+          {
+            "coding": [
+              {
+                "system": "urn:iso:std:iso:3166",
+                "code": "US",
+                "display": "United States of America"
+              }
+            ]
+          }
+        ],
+        "relatedArtifact": [
+          {
+            "type": "documentation",
+            "label": "Template for daily Hospital COVID-19 Reporting",
+            "citation": "Federal Emergency Management Agency (FEMA)",
+            "document": {
+              "url": "https://github.com/AudaciousInquiry/saner-ig/blob/master/resources/Template%20for%20Daily%20Hospital%20COVID-19%20Reporting.xlsx",
+              "creation": "2020-03-29"
+            }
+          }
+        ],
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/measure-type",
+                "code": "composite",
+                "display": "Composite"
+              }
+            ]
+          }
+        ],
+        "group": [
+          {
+            "description": "Midnight to midnight cutoff, tests ordered on previous date queried.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newDiagnosticTests"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, tests ordered on previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "newDiagnosticTests",
+                  "description": "FEMA defined field: newDiagnosticTests",
+                  "language": "text/plain",
+                  "expression": "Midnight to midnight cutoff, tests ordered on previous date queried."
+                }
+              }
+            ]
+          },
+          {
+            "description": "All tests ordered to date.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeDiagnosticTests"
+                }
+              ],
+              "text": "All tests ordered to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativeDiagnosticTests",
+                  "description": "FEMA defined field: cumulativeDiagnosticTests",
+                  "language": "text/plain",
+                  "expression": "All tests ordered to date.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "Midnight to midnight cutoff, test results released on previous date queried.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newTestsResulted"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, test results released on previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "newTestsResulted",
+                  "description": "FEMA defined field: newTestsResulted",
+                  "language": "text/plain",
+                  "expression": "Midnight to midnight cutoff, test results released on previous date queried.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "All specimens rejected for testing to date.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeSpecimensRejected"
+                }
+              ],
+              "text": "All specimens rejected for testing to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativeSpecimensRejected",
+                  "description": "FEMA defined field: cumulativeSpecimensRejected",
+                  "language": "text/plain",
+                  "expression": "All specimens rejected for testing to date.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "All tests with results released to date.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativeTestsPerformed"
+                }
+              ],
+              "text": "All tests with results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativeTestsPerformed",
+                  "description": "FEMA defined field: cumulativeTestsPerformed",
+                  "language": "text/plain",
+                  "expression": "All tests with results released to date.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "Midnight to midnight cutoff, positive test results released on the previous date queried.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "newPositiveC19Tests"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, positive test results released on the previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "newPositiveC19Tests",
+                  "description": "FEMA defined field: newPositiveC19Tests",
+                  "language": "text/plain",
+                  "expression": "Midnight to midnight cutoff, positive test results released on the previous date queried.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "All positivetest results released to date.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativePositiveC19Tests"
+                }
+              ],
+              "text": "All positivetest results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "initial-population",
+                      "display": "Initial Population"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativePositiveC19Tests",
+                  "description": "FEMA defined field: cumulativePositiveC19Tests",
+                  "language": "text/plain",
+                  "expression": "All positivetest results released to date.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "# of new positive test results / # of total new tests released for previous date queried.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "percentPositiveAmongNewlyResultedTests"
+                }
+              ],
+              "text": "# of new positive test results / # of total new tests released for previous date queried."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "percentPositiveAmongNewlyResultedTests",
+                  "description": "FEMA defined field: percentPositiveAmongNewlyResultedTests",
+                  "language": "text/plain",
+                  "expression": "# of new positive test results",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "percentPositiveAmongNewlyResultedTests",
+                  "description": "FEMA defined field: percentPositiveAmongNewlyResultedTests",
+                  "language": "text/plain",
+                  "expression": "# of total new tests released for previous date queried.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          },
+          {
+            "description": "# of total positive results to released date / # of total test results released to date.",
+            "code": {
+              "coding": [
+                {
+                  "system": "http://build.fhir.org/ig/AudaciousInquiry/saner-ig",
+                  "code": "cumulativePercentPositiveAmongResultedTests"
+                }
+              ],
+              "text": "# of total positive results to released date / # of total test results released to date."
+            },
+            "population": [
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "numerator",
+                      "display": "Numerator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativePercentPositiveAmongResultedTests",
+                  "description": "FEMA defined field: cumulativePercentPositiveAmongResultedTests",
+                  "language": "text/plain",
+                  "expression": "# of total positive results to released date",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              },
+              {
+                "code": {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code": "denominator",
+                      "display": "Denominator"
+                    }
+                  ]
+                },
+                "criteria": {
+                  "name": "cumulativePercentPositiveAmongResultedTests",
+                  "description": "FEMA defined field: cumulativePercentPositiveAmongResultedTests",
+                  "language": "text/plain",
+                  "expression": "# of total test results released to date.",
+                  "reference": "https://www.fema.gov/news-release/2020/04/10/coronavirus-covid-19-pandemic-hhs-letter-hospital-administrators"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
