@@ -1,10 +1,10 @@
 {
   "resourceType":"StructureDefinition",
-  "id":"Location-BedCapacity-StructureDefinition",
+  "id":"Extension-numTotBeds-StructureDefinition",
   "url":"https://github.com/symptomatic/covid19-saner/tree/master/data/specifications/Location-BedCapacity-StructureDefinition",
   "version":"1.0.1",
-  "name":"Location-BedCapacity-StructureDefinition",
-  "title":"Location-BedCapacity-StructureDefinition",
+  "name":"Extension-numTotBeds-StructureDefinition",
+  "title":"Extension - Number of Total Beds",
   "status":"active",
   "publisher":"Symptomatic",
   "contact": [
@@ -36,13 +36,13 @@
           {
               "id":"Extension",
               "path":"Extension",
-              "short":"LocationBedCapacity",
-              "definition":"The number of available beds at a location."
+              "short":"numTotBeds",
+              "definition":"Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients."
           },
           {
               "id":"Extension.url",
               "path":"Extension.url",
-              "fixedUri":"https://github.com/symptomatic/covid19-saner/tree/master/data/specifications/Location-BedCapacity-StructureDefinition"
+              "fixedUri":"https://github.com/symptomatic/covid19-saner/tree/master/data/specifications/Extension-numTotBeds-StructureDefinition.json"
           },
           {
               "id":"Extension.value[x]:valueInteger",
@@ -55,8 +55,8 @@
                       "display":"Bed-sitting room (environment) |"
                   }
               ],
-              "short":"LocationBedCapacity",
-              "definition":"The number of available beds at a location.",
+              "short":"numTotBeds",
+              "definition":"Total number of all Inpatient and outpatient beds, including all staffed, ICU, licensed, and overflow(surge) beds used for inpatients or outpatients.",
               "type": [
                   {
                       "code":"integer"

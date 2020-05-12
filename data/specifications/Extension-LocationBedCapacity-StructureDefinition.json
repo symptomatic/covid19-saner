@@ -1,0 +1,68 @@
+{
+  "resourceType":"StructureDefinition",
+  "id":"Extension-LocationBedCapacity-StructureDefinition",
+  "url":"https://github.com/symptomatic/covid19-saner/tree/master/data/specifications/Location-BedCapacity-StructureDefinition",
+  "version":"1.0.1",
+  "name":"Extension-LocationBedCapacity-StructureDefinition",
+  "title":"Extension - Location Bed Capacity",
+  "status":"active",
+  "publisher":"Symptomatic",
+  "contact": [
+      {
+          "name":"Symptomatic",
+          "telecom": [
+              {
+                  "system":"email",
+                  "value":"info@symptomatic.healthcare",
+                  "use":"work"
+              }
+          ]
+      }
+  ],
+  "description":"An extension on the Location resource for Bed Capacity.  The extension provides a lightweight storage of scores provided by a MeasureReport, and is intended for geomapping applications and presentation rendering.  This measure score is non-authoritative (for rendering purposes only), and is intended to be removed during validation.",
+  "copyright":"CC0",
+  "fhirVersion":"4.0.1",
+  "kind":"complex-type",
+  "abstract":false,
+  "contextType":"resource",
+  "context": [
+      "Location"
+  ],
+  "type":"Extension",
+  "baseDefinition":"http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation":"specialization",
+  "differential":{
+      "element": [
+          {
+              "id":"Extension",
+              "path":"Extension",
+              "short":"LocationBedCapacity",
+              "definition":"The number of available beds at a location."
+          },
+          {
+              "id":"Extension.url",
+              "path":"Extension.url",
+              "fixedUri":"https://github.com/symptomatic/covid19-saner/tree/master/data/specifications/Location-BedCapacity-StructureDefinition"
+          },
+          {
+              "id":"Extension.value[x]:valueInteger",
+              "path":"Extension.valueInteger",
+              "sliceName":"valueInteger",
+              "code": [
+                  {
+                      "system":"http://snomed.info/sct",
+                      "code":"224664005",
+                      "display":"Bed-sitting room (environment) |"
+                  }
+              ],
+              "short":"LocationBedCapacity",
+              "definition":"The number of available beds at a location.",
+              "type": [
+                  {
+                      "code":"integer"
+                  }
+              ]
+          }
+      ]
+  }
+}
