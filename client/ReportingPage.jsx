@@ -105,54 +105,29 @@ function ReportingPage(props){
   //-------------------------------------------------------------------
   // Tracking
 
-  let patientsCursor;
-  patientsCursor = useTracker(function(){
-    return Patients.find();
-  }, [props.lastUpdated]);  
-  if(patientsCursor){
-    patients = patientsCursor.fetch();
-  }
-
-  let measureCursor;
-  measureCursor = useTracker(function(){    
-    return Measures.find();
+  patients = useTracker(function(){
+    return Patients.find().fetch();
   }, [props.lastUpdated]);  
 
-  if(measureCursor){
-    measures = measureCursor.fetch();
-  }
-
-  let measureReportsCursor;
-  measureReportsCursor = useTracker(function(){
-    return MeasureReports.find();
+  measures = useTracker(function(){    
+    return Measures.find().fetch();
   }, [props.lastUpdated]);  
-  if(measureReportsCursor){
-    measureReports = measureReportsCursor.fetch();
-  }
 
-  let devicesCursor;
-  devicesCursor = useTracker(function(){
-    return Devices.find();
+  measureReports = useTracker(function(){
+    return MeasureReports.find().fetch();
   }, [props.lastUpdated]);  
-  if(devicesCursor){
-    devices = devicesCursor.fetch();
-  }
 
-  let organizationsCursor;
-  organizationsCursor = useTracker(function(){
-    return Organizations.find();
+  devices = useTracker(function(){
+    return Devices.find().fetch();
   }, [props.lastUpdated]);  
-  if(organizationsCursor){
-    organizations = organizationsCursor.fetch();
-  }
 
-  let hospitalLocationsCursor;
-  hospitalLocationsCursor = useTracker(function(){
-    return HospitalLocations.find();
+  organizations = useTracker(function(){
+    return Organizations.find().fetch();
   }, [props.lastUpdated]);  
-  if(hospitalLocationsCursor){
-    hospitalLocations = hospitalLocationsCursor.fetch();
-  }
+
+  hospitalLocations = useTracker(function(){
+    return HospitalLocations.find().fetch();
+  }, [props.lastUpdated]);  
 
 
   //-------------------------------------------------------------------

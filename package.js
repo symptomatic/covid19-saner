@@ -1,6 +1,6 @@
 Package.describe({
     name: 'symptomatic:covid19-saner',
-    version: '0.4.7',
+    version: '0.4.9',
     summary: 'Covid19 - Reporting - SANER (Situational Awareness of Novel Epidemic Response',
     git: 'https://github.com/symptomatic/covid19-saner',
     documentation: 'README.md'
@@ -12,7 +12,7 @@ Package.onUse(function(api) {
     
     api.use('meteor-base@1.4.0');
     api.use('ecmascript@0.13.0');
-    api.use('react-meteor-data@0.2.15');
+    api.use('react-meteor-data@2.1.2');
     api.use('session');
     api.use('mongo');
     api.use('http');
@@ -20,7 +20,7 @@ Package.onUse(function(api) {
     api.use('random');
     api.use('fourseven:scss');
 
-    api.use('clinical:hl7-fhir-data-infrastructure@6.4.17');
+    api.use('clinical:hl7-fhir-data-infrastructure@6.8.4');
     
     api.mainModule('index.jsx', 'client');
 });

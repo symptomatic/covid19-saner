@@ -34,8 +34,6 @@ let FooterButtons = [{
 
 export { 
   DynamicRoutes, 
-
   ReportingPage,
-
   FooterButtons
 };
