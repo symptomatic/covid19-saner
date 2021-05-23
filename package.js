@@ -1,10 +1,6 @@
 Package.describe({
     name: 'symptomatic:covid19-saner',
-<<<<<<< HEAD
     version: '0.4.9',
-=======
-    version: '0.4.8',
->>>>>>> bb89e4d44608b9319b039ad3331a0d97ed35d3e5
     summary: 'Covid19 - Reporting - SANER (Situational Awareness of Novel Epidemic Response',
     git: 'https://github.com/symptomatic/covid19-saner',
     documentation: 'README.md'
@@ -24,11 +20,7 @@ Package.onUse(function(api) {
     api.use('random');
     api.use('fourseven:scss');
 
-<<<<<<< HEAD
-    api.use('clinical:hl7-fhir-data-infrastructure@6.8.4');
-=======
-    api.use('clinical:hl7-fhir-data-infrastructure@6.8.2');
->>>>>>> bb89e4d44608b9319b039ad3331a0d97ed35d3e5
+    api.use('clinical:hl7-fhir-data-infrastructure');
     
     api.mainModule('index.jsx', 'client');
 });
