@@ -33,7 +33,7 @@ import moment from 'moment';
 
 import { Patients, Organizations, Measures, Devices, MeasureReports, MeasuresTable, MeasureReportsTable, OrganizationsTable, HospitalLocations, LocationsTable  } from 'meteor/clinical:hl7-fhir-data-infrastructure';
 
-import { PageCanvas, StyledCard, PatientTable } from 'material-fhir-ui';
+import { PageCanvas, StyledCard, PatientTable } from 'fhir-starter';
 import { useTracker } from './Tracker';
 
 
