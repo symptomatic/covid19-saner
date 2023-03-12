@@ -1,6 +1,6 @@
 Package.describe({
     name: 'symptomatic:covid19-saner',
-    version: '0.4.9',
+    version: '0.5.2',
     summary: 'Covid19 - Reporting - SANER (Situational Awareness of Novel Epidemic Response',
     git: 'https://github.com/symptomatic/covid19-saner',
     documentation: 'README.md'
